@@ -1,4 +1,4 @@
-# HappyBurger
+# HappyBurger WP Theme
 
 This work is a wordpress theme to demontrate widget features and page templating. More details about implemented features read [here](#implemented-functionality).
 
