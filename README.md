@@ -1,6 +1,6 @@
 # HappyBurger
 
-This work is an updating dynamic website to let users to leave a product reviews. More details about implemented features read [here](#implemented-functionality).
+This work is a wordpress theme to demontrate widget features and page templating. More details about implemented features read [here](#implemented-functionality).
 
 ## Getting Started
 
@@ -18,69 +18,49 @@ These instructions will get you a copy of the project up and running on your loc
 Server Name: localhost
 Admin: root
 Password: root
-Database Name: happyburger
+Database Name: wordpress
 ```
 
 * Clone this repo on your local server
 
-* Import SQL DB from dump file HappyBurger_dump.sql
+* Import SQL DB from dump file WP_dump.sql
 
 * Run web-server and MySQL using MAMP
+
+* Download and install the latest version of WordPress [here](https://wordpress.org/download/)
+
+* Set the happyBurger theme by copying the whole happyBurger to the wp-content/theme/ of your WordPress folder on your local server
 
 * Congrats! Good Job! Now you're all set and good to go.
 
 * Open homepage in the browser
 
-* Use these registered users to login and try to play around
-
-Alejandro Sanabria
-```
-Login: alejandro sanabria
-Password: alejandro-sanabria
-```
-Chris Fidao
-```
-Login: chris-fidao
-Password: chris-fidao
-```
-Dries Vints
-```
-Login: dries vints
-Password: dries-vints
-```
+* Hover over pages and look into admin panel to find installed widgets
 
 ## Implemented Functionality
 
-### User Profile Management
+### Home page customization
 
-Registration is available for new users. After registration is completed, User will be authenticated automatically. For existing users, authorization and profile data change opportunities are available:
-* avatar
-* birthdate
-* first name/username - automatically updates for existing session on submit
-* phone number
-* gender
-* notification rules
+Using customizer toolbar you are able to change the main image, heading and main text on the homepage.
 
-### Product Catalog Rendering
+### Home page box widgets
 
-Displays a list of products with image, description, and price.
+Using box widgets functionality you are able to change the content in 3 boxes on homepage from admin panel:
+* image
+* text under the image
 
-### Product Information Rendering
+### Submenus
 
-Display product image, description, price, average rating based on user feedback of the product. Display a list of product reviews.
+You are able to create a submenus that will render as a dropdown in navigation panel
 
-### Product Reviews
+### Posts
 
-Registered and authorized User can leave a feedback about the product on product page. To create a review, the User must specify the review text and the product rating on a scale from 0 to 100 (the default value is 50). 
+Blog page renders all published posts with post's thumbnail. Each post can be published in 3 different types: standart, gallery, aside.
 
-The star icon fills depending on the rating given by user. For reviews with a rating of more than 50 star will be filled full. For reviews with a rating greater than or equal to 30 but less than or equal to 50 star will be filled half full. For everything else, the star will not be filled at all.
+### Post's comments
 
-For each review in the list of reviews are displaying: the author's avatar, the author's name, the review text, the rating of the product, how long time ago the review was left, and the star icon.
-An authorized user can delete his own reviews on the product page.
+Post page renders all published comments by logged in users.
 
-### Search bar autocomplete
-
-Displays product names in dropdown list of the search bar on navigation panel that matched to user's input in the search bar.
 
 
 # Project Files
@@ -90,63 +70,52 @@ Displays product names in dropdown list of the search bar on navigation panel th
 ### Partials
 
 ````
-config.php - holds sql connection string 
-head_sources.php - holds links to css files and frameworks
-header.php - page header
-bottom_sources.php - holds links to JS files and frameworks
+wp_materialize_navwalker.php - code snippet to implement materialize css navigation dropdown submenu
+header.php - header of the website
+footer.php - footer of the website
+content-aside.php - post type aside
+content-gallery.php - post type gallery
+content-page.php - to display the title as a link to the post's permalink for the page
+content-single.php - to display the title as a link to the post's permalink for the post
+content.php
+functions.php - all custom functions
+customizer.php - theme customizer
 ````
 
 ### Pages
 
 ````
 index.php - home page
-products.php - product catalog page
-product.php - product page
-login.php - authentication (sign in) page
-register.php - sign up page
-user.php - user account management page
+page.php - single page template
+sidebar.php - sidebar template
+single.php - single post template
+front-page.php - front page of website
 ````
-
-### Callbacks
-
-```
-logout.php - session destroy and logout callback
-ajax-results.php -  callback to get product name suggestions for autocomplete
-```
 
 ## CSS
 
 ```
 style.css - holds all custom styles
 ```
- 
-## JavaScript
-
-```
-main.js - contains all custom javascript logic
-```
 
 ## Project Folders
 
 ```
-/js - all javascript files
 /css - all css files
 /images - all images
-/images/products - product images
-/images/users - user avatar images
-/callbacks - callback php files
+/inc - includes
+/template-parts - template parts
 ```
 
 ## Built With
 
 ### Style
 
-* [Materialize CSS](https://materializecss.com)
-* [Moment.js](http://momentjs.com)
+[Materialize CSS](https://materializecss.com)
 
-### Front End
+### CMS
 
-[jQuery v.3.3.1](https://code.jquery.com/jquery-3.3.1.min.js)
+[WordPress](https://wordpress.org)
 
 ### Back End
 
